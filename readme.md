@@ -69,8 +69,18 @@ Obtem a tempo de processamento para este compósito
 Cobertura da área de referência
 ### registo
 Obtem o registo posicional deste composto
-
-### Constantes posicionais dos campos do evento
+### palette
+```python
+Composito.palette()
+```
+Palette de cores para visualização de NDVI
+### avalia
+```python
+Composito.avalia(self)
+```
+Avalia o compósito de MVC
+### Constantes
+Constantes que refletem os indices posicionais dos campos do evento
 * DATA_FIM
 * DATA_INICIO
 * IMAGENS
@@ -93,17 +103,6 @@ Obtem o registo posicional deste composto
 * NDVI_PONTOS_VEGETACAO_ALVO
 * NDVI_PONTOS_VEGETACAO_REFERENCIA
 * TEMPO_PROCESSAMENTO
-
-### palette
-```python
-Composito.palette()
-```
-Palette de cores para visualização de NDVI
-### avalia
-```python
-Composito.avalia(self)
-```
-Avalia o compósito de MVC
 
 ## Evento
 ```python
@@ -135,51 +134,53 @@ Devolve a lista dos nomes dos campos correspondentes ao evento
 GEE (Estático)
 ```
 Constantes do GEE
-### BANDA_NIR
+
+### Constantes
+* BANDA_NIR
 Nome da banda NIR na missão Sentinel 2
-### BANDA_QUALIDADE
+* BANDA_QUALIDADE
 Nome da banda de qualidade referente à presença de nuvens na missão Sentinel 2
-### BANDA_RED
+* BANDA_RED
 Nome da banda RED na missão Sentinel 2
-### CLC_ANO
+* CLC_ANO
 Ano de publicação do Corine Land Cover
-### CLC_BANDA
+* CLC_BANDA
 Nome da banda do CLC
-### CLC_COLECCAO
+* CLC_COLECCAO
 Nome da colecção de imagens do CLC no GEE
-### ICNF_CAMPO_CONCELHO
+* ICNF_CAMPO_CONCELHO
 Nome do campo relativo ao concelho na base de dados do ICNF
-### ICNF_CAMPO_DISTRITO
+* ICNF_CAMPO_DISTRITO
 Nome do campo relativo ao distrito na base de dados do ICNF
-### ICNF_CAMPO_FIM
+* ICNF_CAMPO_FIM
 Nome do campo que reflete a data de extinção do incêndio na base de dados do ICNF
-### ICNF_CAMPO_FREGUESIA
+* ICNF_CAMPO_FREGUESIA
 Nome do campo relativo à freguesia na base de dados do ICNF
-### ICNF_CAMPO_IDENTIFICADOR
+* ICNF_CAMPO_IDENTIFICADOR
 Nome do campo com o identificador único do evento de incêndio na base de dados do ICNF
-### ICNF_CAMPO_INICIO
+* ICNF_CAMPO_INICIO
 Nome do campo que regista a data de início do episódio de incêndio
-### ICNF_CAMPO_LOCAL
+* ICNF_CAMPO_LOCAL
 Nome do campo relativo ao nome da localidade na base de dados do ICNF
-### ICNF_CAMPOS
+* ICNF_CAMPOS
 Lista de Python com os nomes dos campos do evento de incêndio na base de dados do ICNF
-### ICNF_COLECCAO
+* ICNF_COLECCAO
 Nome da coleção que contém a base de dados do ICNF no GEE
-### IMAGEM_DATA
+* IMAGEM_DATA
 Nome do campo que regista a imagem da data no GEE
-### IMAGEM_INDICE
+* IMAGEM_INDICE
 Nome do campo que regista o indice da imagem, numa coleção de imagens, no repositório do GEE
-### LT_CODIGO
+* LT_CODIGO
 Nome do campo com o código de pais na base de dados de limites territoriais do Departamento de Estado dos EUA
-### LT_COLECCAO
+* LT_COLECCAO
 Nome da coleção com a base de dados de limites territoriais do Departamento de Estado dos EUA no GEE
-### LT_NOME
+* LT_NOME
 Nome do campo com o código da zona do pais na base de dados de limites territoriais do Departamento de Estado dos EUA
-### SENTINEL_COLECCAO
+* SENTINEL_COLECCAO
 Nome da coleção de dados recolhidos pela missão Sentinel 2 no repositório do GEE
-### SENTINEL_PERCENTAGEM_NUVENS
+* SENTINEL_PERCENTAGEM_NUVENS
 Nome do campo das propriedades de uma imagem Sentinel 2 no repositório do GEE que regista a cobertura de nuvens
-### UNIDADES_METROS
+* UNIDADES_METROS
 Nome da unidade metro
 
 ## Geometria
@@ -212,14 +213,6 @@ ModeloNotificacao(self, evento=None)
 Classe que suporta as notificações ao processo do utilizador e o fluxo
 ### fluxo
 Estado do fluxo de execução
-### INICIO
-Evento de inicio de processamento de um compósito
-### SUCESSO
-Evento de sucesso na obtenção de um compósito
-### TERMINA
-Evento de pedido do utilizador para que ocorra a interrupção do processamento.
-### VAZIO
-Evento relativo a um compósito vazio
 ### inicio
 ```python
 ModeloNotificacao.inicio(self, dados=None)
@@ -240,38 +233,26 @@ Notifica o processo do utilizador que não existe MVC na data
 ModeloNotificacao.termina(self)
 ```
 O fluxo foi terminado, modifica o estado
+### Constantes
+* INICIO
+Evento de inicio de processamento de um compósito
+* SUCESSO
+Evento de sucesso na obtenção de um compósito
+* TERMINA
+Evento de pedido do utilizador para que ocorra a interrupção do processamento.
+* VAZIO
+Evento relativo a um compósito vazio
+
 ## Modelo
 ```python
 Modelo(self, local, tolerancia=100, distancia=300, ciclo=10)
 ```
 Modelo de exploração, agregação e persistência dos dados de GEE
 
-### Constantes com as chaves usadas no dicionário que é estruturado no ficheiro de dados
-* ADJACENTE_FF
-* ALVO_FF
-* ALVO_FL
-* COMUM_FF
-* COMUM_FL
-* DATA_INCENDIO_FF
-* DATA_PRIMEIRA_IMAGEM_FF
-* ESCALA_FF
-* FLORESTA_FF
-* LOCAL_FF
-* MATO_FF
-* METADADOS_FF
-* REFERENCIA_FF
-* REFERENCIA_FL
-* TABELA_FF
-* TOLERANCIA_FF
-* VEGETACAO_FF
-* VERSAO_FF
-
 ### alvo
 Informação da cobertura na zona do incêndio
-
 ### data_primeira_imagem
 Data da primeira imagem após o incêndio
-
 ### distancia
 Distância correspondente à largura da faixa de referência
 ### escala
@@ -311,6 +292,25 @@ Guarda o modelo num ficheiro
 Modelo.carrega(self, nome)
 ```
 Carrega os dados de modelo a partir de um ficheiro
+### Constantes com as chaves usadas no dicionário que é estruturado no ficheiro de dados
+* ADJACENTE_FF
+* ALVO_FF
+* ALVO_FL
+* COMUM_FF
+* COMUM_FL
+* DATA_INCENDIO_FF
+* DATA_PRIMEIRA_IMAGEM_FF
+* ESCALA_FF
+* FLORESTA_FF
+* LOCAL_FF
+* MATO_FF
+* METADADOS_FF
+* REFERENCIA_FF
+* REFERENCIA_FL
+* TABELA_FF
+* TOLERANCIA_FF
+* VEGETACAO_FF
+* VERSAO_FF
 
 ## ModeloCobertura
 ```python
@@ -337,9 +337,6 @@ Obtem a dimensão, em pontos, de cada máscara (*)
 ModeloCobertura.imprime(self, titulo=None)
 ```
 Envia para a consola um resumo do modelo de cobertura
-# recveg.modelotipocobertura
-
-Modelo de um tipo de cobertura
 
 ## ModeloTipoCobertura
 ```python
@@ -384,8 +381,6 @@ Map que adiciona uma banda com o sufixo _B que representa os pixeis válidos
 Utilidades (Estático)
 ```
 Classe que encapsula um conjunto de métodos utilitários
-### DIA
-Constante que representa um dia em milisegundos
 
 ### agora
 ```python
@@ -417,6 +412,10 @@ Formata um timestamp unix em milisegundos
 Utilidades.formata_data_hora(data)
 ```
 Formata um timestamp unix em milisegundos
+
+### Constantes
+* DIA
+Constante que representa um dia em milisegundos
 
 ## ZonasArdidas
 ```python
