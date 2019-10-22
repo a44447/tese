@@ -1,85 +1,81 @@
-# Modelo preditivo de recuperação da vegetação afetada por incêndios florestais
-Este repositório contém os artefactos que fazem parte da biblioteca desenvolvida no âmbito da dissertação de mestrado intitulada "Modelo preditivo de recuperação da vegetação afetada por incêndios florestais", do Mestrado em Engenharia Informática de de Computadores do Instituto Superior de Engenharia de Lisboa.
-Este código é publicado sob a licença Creative Commons CC BY-NC:
->Esta licença permite que outros remisturem, adaptem e criem a partir do seu trabalho para fins não comerciais, e embora os novos trabalhos tenham de lhe atribuir o devido crédito e não possam ser usados para fins comerciais, eles não têm de licenciar esses trabalhos derivados ao abrigo dos mesmos termos.
+# Modelo preditivo de recuperaÃ§Ã£o da vegetaÃ§Ã£o afetada por incÃªndios florestais
+Este repositÃ³rio contÃ©m os artefactos que fazem parte da biblioteca desenvolvida no Ã¢mbito da dissertaÃ§Ã£o de mestrado intitulada "Modelo preditivo de recuperaÃ§Ã£o da vegetaÃ§Ã£o afetada por incÃªndios florestais", do Mestrado em Engenharia InformÃ¡tica de de Computadores do Instituto Superior de Engenharia de Lisboa.
+Este cÃ³digo Ã© publicado sob a licenÃ§a Creative Commons CC BY-NC:
+>Esta licenÃ§a permite que outros remisturem, adaptem e criem a partir do seu trabalho para fins nÃ£o comerciais, e embora os novos trabalhos tenham de lhe atribuir o devido crÃ©dito e nÃ£o possam ser usados para fins comerciais, eles nÃ£o tÃªm de licenciar esses trabalhos derivados ao abrigo dos mesmos termos.
 
 # recveg.cobertura
 
 Cobertura - Corine Land Cover
 
-@author: Rui Reis
-
 ## Cobertura
 ```python
-Cobertura(self, /, *args, **kwargs)
+Cobertura (EstÃ¡tico)
 ```
 
-Classe que encapsula a funcionalidade de caracterização da cobertura da
-superfície terrestre tendo em conta a utilização do Corinne Land Cover
+Classe que encapsula a funcionalidade de caracterizaÃ§Ã£o da cobertura da
+superfÃ­cie terrestre tendo em conta a utilizaÃ§Ã£o do Corinne Land Cover
 (CLC) publicado pela plataforma Copernicus
 
 ### Floresta
 ```python
-Cobertura.Floresta(self, /, *args, **kwargs)
+Cobertura.Floresta (EstÃ¡tico)
 ```
 Categorias de CLC para tipos de floresta
 ### Mato
 ```python
-Cobertura.Mato(self, /, *args, **kwargs)
+Cobertura.Mato (EstÃ¡tico)
 ```
 Lista das categorias CLC para tipos de mato
 ### palette
 ```python
 Cobertura.palette()
 ```
-Palette de cores para visualização de classes CLC
+Palette de cores para visualizaÃ§Ã£o de classes CLC
 ### lista
 ```python
 Cobertura.lista()
 ```
-Lista das categorias CLC para tipos de vegetação
+Lista das categorias CLC para tipos de vegetaÃ§Ã£o
 ### gera
 ```python
 Cobertura.gera(regiao, categorias=None)
 ```
 
-Gera uma representação da imagem correspondente ao Corine Land
-Cover  de 2012 para a região indicada
+Gera uma representaÃ§Ã£o da imagem correspondente ao Corine Land
+Cover  de 2012 para a regiÃ£o indicada
 
 # recveg.composito
 
-Compósito MVC de NDVI
-
-@author: Rui Reis
+CompÃ³sito MVC de NDVI
 
 ## Composito
 ```python
 Composito(self, data, modelo, dias=10)
 ```
-Compósito MVC de NDVI
+CompÃ³sito MVC de NDVI
 ### alvo
-Cobertura da área alvo
+Cobertura da Ã¡rea alvo
 ### escala
-Escala da cobertura de superfície
+Escala da cobertura de superfÃ­cie
 ### fim
 ### fim_intervalo
 Data fim do intervalo
 ### caracteristicas
-Lista das carecterísticas do registo posicional do composto
+Lista das carecterÃ­sticas do registo posicional do composto
 ### imagens
-Número de imagens no compósito
+NÃºmero de imagens no compÃ³sito
 ### inicio
-Data inicio do compósito
+Data inicio do compÃ³sito
 ### inicio_intervalo
 Data inicio do intervalo
 ### metricas
-Obtem as metricas para este compósito
+Obtem as metricas para este compÃ³sito
 ### perimetro
-Perimetro da área total
+Perimetro da Ã¡rea total
 ### processamento
-Obtem a tempo de processamento para este compósito
+Obtem a tempo de processamento para este compÃ³sito
 ### referencia
-Cobertura da área de referência
+Cobertura da Ã¡rea de referÃªncia
 ### registo
 Obtem o registo posicional deste composto
 
@@ -111,26 +107,26 @@ Obtem o registo posicional deste composto
 ```python
 Composito.palette()
 ```
-Palette de cores para visualização de NDVI
+Palette de cores para visualizaÃ§Ã£o de NDVI
 ### avalia
 ```python
 Composito.avalia(self)
 ```
-Avalia o compósito de MVC
+Avalia o compÃ³sito de MVC
 
 # recveg.evento
 
-Caracterização de uma zona ardida na base de dados do ICNF
+CaracterizaÃ§Ã£o de uma zona ardida na base de dados do ICNF
 
 ## Evento
 ```python
 Evento(self, dados)
 ```
-Encapsula a informação de um evento
+Encapsula a informaÃ§Ã£o de um evento
 ### concelho
 Concelho onde pertence a Freguesia
 ### data_fim
-Data de extinção do fogo
+Data de extinÃ§Ã£o do fogo
 ### data_inicio
 Data inicio do fogo
 ### distrito
@@ -152,53 +148,53 @@ Constantes GEE e das suas fontes de dados
 
 ## GEE
 ```python
-GEE(self, /, *args, **kwargs)
+GEE (EstÃ¡tico)
 ```
 Constantes do GEE
 ### BANDA_NIR
-Nome da banda NIR na missão Sentinel 2
+Nome da banda NIR na missÃ£o Sentinel 2
 ### BANDA_QUALIDADE
-Nome da banda de qualidade referente à presença de nuvens na missão Sentinel 2
+Nome da banda de qualidade referente Ã  presenÃ§a de nuvens na missÃ£o Sentinel 2
 ### BANDA_RED
-Nome da banda RED na missão Sentinel 2
+Nome da banda RED na missÃ£o Sentinel 2
 ### CLC_ANO
-Ano de publicação do Corine Land Cover
+Ano de publicaÃ§Ã£o do Corine Land Cover
 ### CLC_BANDA
 Nome da banda do CLC
 ### CLC_COLECCAO
-Nome da colecção de imagens do CLC no GEE
+Nome da colecÃ§Ã£o de imagens do CLC no GEE
 ### ICNF_CAMPO_CONCELHO
 Nome do campo relativo ao concelho na base de dados do ICNF
 ### ICNF_CAMPO_DISTRITO
 Nome do campo relativo ao distrito na base de dados do ICNF
 ### ICNF_CAMPO_FIM
-Nome do campo que reflete a data de extinção do incêndio na base de dados do ICNF
+Nome do campo que reflete a data de extinÃ§Ã£o do incÃªndio na base de dados do ICNF
 ### ICNF_CAMPO_FREGUESIA
-Nome do campo relativo à freguesia na base de dados do ICNF
+Nome do campo relativo Ã  freguesia na base de dados do ICNF
 ### ICNF_CAMPO_IDENTIFICADOR
-Nome do campo com o identificador único do evento de incêndio na base de dados do ICNF
+Nome do campo com o identificador Ãºnico do evento de incÃªndio na base de dados do ICNF
 ### ICNF_CAMPO_INICIO
-Nome do campo que regista a data de início do episódio de incêndio
+Nome do campo que regista a data de inÃ­cio do episÃ³dio de incÃªndio
 ### ICNF_CAMPO_LOCAL
 Nome do campo relativo ao nome da localidade na base de dados do ICNF
 ### ICNF_CAMPOS
-Lista de Python com os nomes dos campos do evento de incêndio na base de dados do ICNF
+Lista de Python com os nomes dos campos do evento de incÃªndio na base de dados do ICNF
 ### ICNF_COLECCAO
-Nome da coleção que contém a base de dados do ICNF no GEE
+Nome da coleÃ§Ã£o que contÃ©m a base de dados do ICNF no GEE
 ### IMAGEM_DATA
 Nome do campo que regista a imagem da data no GEE
 ### IMAGEM_INDICE
-Nome do campo que regista o indice da imagem, numa coleção de imagens, no repositório do GEE
+Nome do campo que regista o indice da imagem, numa coleÃ§Ã£o de imagens, no repositÃ³rio do GEE
 ### LT_CODIGO
-Nome do campo com o código de pais na base de dados de limites territoriais do Departamento de Estado dos EUA
+Nome do campo com o cÃ³digo de pais na base de dados de limites territoriais do Departamento de Estado dos EUA
 ### LT_COLECCAO
-Nome da coleção com a base de dados de limites territoriais do Departamento de Estado dos EUA no GEE
+Nome da coleÃ§Ã£o com a base de dados de limites territoriais do Departamento de Estado dos EUA no GEE
 ### LT_NOME
-Nome do campo com o código da zona do pais na base de dados de limites territoriais do Departamento de Estado dos EUA
+Nome do campo com o cÃ³digo da zona do pais na base de dados de limites territoriais do Departamento de Estado dos EUA
 ### SENTINEL_COLECCAO
-Nome da coleção de dados recolhidos pela missão Sentinel 2 no repositório do GEE
+Nome da coleÃ§Ã£o de dados recolhidos pela missÃ£o Sentinel 2 no repositÃ³rio do GEE
 ### SENTINEL_PERCENTAGEM_NUVENS
-Nome do campo das propriedades de uma imagem Sentinel 2 no repositório do GEE que regista a cobertura de nuvens
+Nome do campo das propriedades de uma imagem Sentinel 2 no repositÃ³rio do GEE que regista a cobertura de nuvens
 ### UNIDADES_METROS
 Nome da unidade metro
 # recveg.geometria
@@ -209,58 +205,58 @@ Geometria
 ```python
 Geometria(self, identificador, tolerancia, distancia)
 ```
-Encapsula a funcionalidade de avaliação da geometria dos fogos ocorridos
+Encapsula a funcionalidade de avaliaÃ§Ã£o da geometria dos fogos ocorridos
 ### alvo
-Geometria alvo do incêndio
+Geometria alvo do incÃªndio
 ### distancia
-Distância correspondente à largura da faixa de referência
+DistÃ¢ncia correspondente Ã  largura da faixa de referÃªncia
 ### evento
-Decrição do evento
+DecriÃ§Ã£o do evento
 ### referencia
-Geometria de referência adjacente ao incêndio
+Geometria de referÃªncia adjacente ao incÃªndio
 ### tolerancia
-Tolerância, em metros, a aplicar na simplificação da geometria
+TolerÃ¢ncia, em metros, a aplicar na simplificaÃ§Ã£o da geometria
 ### total
-Geometria total (alvo e referência)
+Geometria total (alvo e referÃªncia)
 ### extrai
 ```python
 Geometria.extrai(self)
 ```
-Extrai informação do evento
+Extrai informaÃ§Ã£o do evento
 # recveg.modelo
 
-Modelo de extração, agregação e armazenamento de dados
+Modelo de extraÃ§Ã£o, agregaÃ§Ã£o e armazenamento de dados
 
 ## ModeloNotificacao
 ```python
 ModeloNotificacao(self, evento=None)
 ```
-Classe que suporta as notificações ao processo do utilizador e o fluxo
+Classe que suporta as notificaÃ§Ãµes ao processo do utilizador e o fluxo
 ### fluxo
-Estado do fluxo de execução
+Estado do fluxo de execuÃ§Ã£o
 ### INICIO
-Evento de inicio de processamento de um compósito
+Evento de inicio de processamento de um compÃ³sito
 ### SUCESSO
-Evento de sucesso na obtenção de um compósito
+Evento de sucesso na obtenÃ§Ã£o de um compÃ³sito
 ### TERMINA
-Evento de pedido do utilizador para que ocorra a interrupção do processamento.
+Evento de pedido do utilizador para que ocorra a interrupÃ§Ã£o do processamento.
 ### VAZIO
-Evento relativo a um compósito vazio
+Evento relativo a um compÃ³sito vazio
 ### inicio
 ```python
 ModeloNotificacao.inicio(self, dados=None)
 ```
-Notifica o processo do utilizador que iniciou a avaliação de um MVC
+Notifica o processo do utilizador que iniciou a avaliaÃ§Ã£o de um MVC
 ### sucesso
 ```python
 ModeloNotificacao.sucesso(self, dados=None)
 ```
-Notifica o processo do utilizador que foi avaliado um MVC válido
+Notifica o processo do utilizador que foi avaliado um MVC vÃ¡lido
 ### vazio
 ```python
 ModeloNotificacao.vazio(self, dados=None)
 ```
-Notifica o processo do utilizador que não existe MVC na data
+Notifica o processo do utilizador que nÃ£o existe MVC na data
 ### termina
 ```python
 ModeloNotificacao.termina(self)
@@ -270,9 +266,9 @@ O fluxo foi terminado, modifica o estado
 ```python
 Modelo(self, local, tolerancia=100, distancia=300, ciclo=10)
 ```
-Modelo de exploração, agregação e persistência dos dados de GEE
+Modelo de exploraÃ§Ã£o, agregaÃ§Ã£o e persistÃªncia dos dados de GEE
 
-#### Constantes com as chaves usadas no dicionário que é estruturado no ficheiro de dados
+#### Constantes com as chaves usadas no dicionÃ¡rio que Ã© estruturado no ficheiro de dados
 #### ADJACENTE_FF
 #### ALVO_FF
 #### ALVO_FL
@@ -293,27 +289,27 @@ Modelo de exploração, agregação e persistência dos dados de GEE
 #### VERSAO_FF
 
 ### alvo
-Informação da cobertura na zona do incêndio
+InformaÃ§Ã£o da cobertura na zona do incÃªndio
 
 ### data_primeira_imagem
-Data da primeira imagem após o incêndio
+Data da primeira imagem apÃ³s o incÃªndio
 
 ### distancia
-Distância correspondente à largura da faixa de referência
+DistÃ¢ncia correspondente Ã  largura da faixa de referÃªncia
 ### escala
-Escala da informação de NDVI em metros
+Escala da informaÃ§Ã£o de NDVI em metros
 ### evento
-Identificador do incêndio
+Identificador do incÃªndio
 ### geometria
-Geometria da área ardida (alvo e referência)
+Geometria da Ã¡rea ardida (alvo e referÃªncia)
 ### referencia
-Informação da cobertura na zona adjacente ao incêndio
+InformaÃ§Ã£o da cobertura na zona adjacente ao incÃªndio
 ### tabela
-Tabela com os registos já avaliados
+Tabela com os registos jÃ¡ avaliados
 ### tolerancia
-Tolerância, em metros, a aplicar na simplificação da geometria
+TolerÃ¢ncia, em metros, a aplicar na simplificaÃ§Ã£o da geometria
 ### versao
-Versão do modelo
+VersÃ£o do modelo
 ### inicializa
 ```python
 Modelo.inicializa(self)
@@ -324,7 +320,7 @@ Inicializa o modelo
 Modelo.avalia(self, data_inicio=None, maximo=100, evento=None)
 ```
 
-Avalia os compostos de NDVI, num máximo de compostos e
+Avalia os compostos de NDVI, num mÃ¡ximo de compostos e
 reporta cada passo a evento
 
 ### guarda
@@ -345,9 +341,9 @@ Modelo de cobertura
 ```python
 ModeloCobertura(self, geometria)
 ```
-Modela a cobertura de uma dada área definida pela geometria
+Modela a cobertura de uma dada Ã¡rea definida pela geometria
 ### escala
-Escala da informação da cobertura, usa a floresta como referência (*)
+Escala da informaÃ§Ã£o da cobertura, usa a floresta como referÃªncia (*)
 ### floresta
 Modelo da cobertura de floresta
 ### geometria
@@ -355,12 +351,12 @@ Geometria da zona
 ### mato
 Modelo da cobertura de mato
 ### vegetacao
-Modelo da cobertura de vegetação
+Modelo da cobertura de vegetaÃ§Ã£o
 ### avalia
 ```python
 ModeloCobertura.avalia(self)
 ```
-Obtem a dimensão, em pontos, de cada máscara (*)
+Obtem a dimensÃ£o, em pontos, de cada mÃ¡scara (*)
 ### imprime
 ```python
 ModeloCobertura.imprime(self, titulo=None)
@@ -376,25 +372,25 @@ ModeloTipoCobertura(self, imagem, dimensao=0)
 ```
 Classe que encapsula a funcionalidade de um tipo de cobertura
 ### dimensao
-Dimensão, em pontos, da imagem
+DimensÃ£o, em pontos, da imagem
 ### imagem
 Imagem da cobertura
 # recveg.sentinel
 
-Dados multi-espectrais da missão Sentinel 2
+Dados multi-espectrais da missÃ£o Sentinel 2
 
 ## Sentinel
 ```python
 Sentinel(self, /, *args, **kwargs)
 ```
-Obtenção de dados do Sentinel 2
+ObtenÃ§Ã£o de dados do Sentinel 2
 ### coleccao
 ```python
 Sentinel.coleccao(regiao, inicio, fim)
 ```
 
-Obtém uma colecção de imagens do Sentinel 2 incluindo apenas as
-imagens com menos de 20% de nuvens na região seleccionada para o
+ObtÃ©m uma colecÃ§Ã£o de imagens do Sentinel 2 incluindo apenas as
+imagens com menos de 20% de nuvens na regiÃ£o seleccionada para o
 intervalo entre as datas de inicio e fim
 
 ### mapa_ndvi
@@ -402,23 +398,23 @@ intervalo entre as datas de inicio e fim
 Sentinel.mapa_ndvi(nome, cobertura)
 ```
 
-Função de mapeamento para geração das bandas de NDVI com exclusão
+FunÃ§Ã£o de mapeamento para geraÃ§Ã£o das bandas de NDVI com exclusÃ£o
 das zonas afetadas por nuvens
 
 ### mapa_validacao
 ```python
 Sentinel.mapa_validacao(nome)
 ```
-Map que adiciona uma banda com o sufixo _B que representa os pixeis válidos
+Map que adiciona uma banda com o sufixo _B que representa os pixeis vÃ¡lidos
 # recveg.utilidades
 
-Classe com métodos de utlidades
+Classe com mÃ©todos de utlidades
 
 ## Utilidades
 ```python
 Utilidades(self, /, *args, **kwargs)
 ```
-Classe que encapsula um conjunto de métodos utilitários
+Classe que encapsula um conjunto de mÃ©todos utilitÃ¡rios
 ### DIA
 Constante que representa um dia em milisegundos
 
@@ -431,12 +427,12 @@ A data e hora atuais como um timestap de unix em milisegundos
 ```python
 Utilidades.dia_seguinte(data)
 ```
-Dia seguinte à data indicada como um timestamp de unix em milisegundos
+Dia seguinte Ã  data indicada como um timestamp de unix em milisegundos
 ### dia_apos
 ```python
 Utilidades.dia_apos(data, dias)
 ```
-Dia correspondete à data indicada acrescida de um dado número de dias
+Dia correspondete Ã  data indicada acrescida de um dado nÃºmero de dias
 ### apenas_data
 ```python
 Utilidades.apenas_data(data)
@@ -460,18 +456,18 @@ Encapsula a base de dados de zonas ardidas da base de dados do ICNF
 ```python
 ZonasArdidas(self)
 ```
-Extrai informação descritiva das zonas ardidas
+Extrai informaÃ§Ã£o descritiva das zonas ardidas
 ### eventos
 Lista das zonas ardidas sob a forma de uma lista de objectos Evento
 ### lista
-Lista de descrições de zonas ardidas em bruto
+Lista de descriÃ§Ãµes de zonas ardidas em bruto
 ### distritos
 ```python
 ZonasArdidas.distritos(self)
 ```
-Obtém uma lista de Distritos com a indicação do número de eventos associado a cada um
+ObtÃ©m uma lista de Distritos com a indicaÃ§Ã£o do nÃºmero de eventos associado a cada um
 ### extrai
 ```python
 ZonasArdidas.extrai(self, distrito=None, concelho=None, freguesia=None, local=None)
 ```
-Extrai os eventos de acordo com o critério apresentado
+Extrai os eventos de acordo com o critÃ©rio apresentado
