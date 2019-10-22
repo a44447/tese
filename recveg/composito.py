@@ -10,7 +10,7 @@ from .sentinel import Sentinel
 from .gee import GEE
 
 class Composito:
-    """Compósito MDV de NDVI"""
+    """Compósito MVC de NDVI"""
     # Bandas
     __NDVI_AF = "NDVI_AF"
     __NDVI_AM = "NDVI_AM"
