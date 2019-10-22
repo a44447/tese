@@ -1,17 +1,13 @@
-# Modelo preditivo de recuperação da vegetação afetada por incêndios florestais
-Este repositório contém os artefactos que fazem parte da biblioteca desenvolvida no âmbito da dissertação de mestrado intitulada "Modelo preditivo de recuperação da vegetação afetada por incêndios florestais", do Mestrado em Engenharia Informática de de Computadores do Instituto Superior de Engenharia de Lisboa.
+# Modelo preditivo de recuperação da vegetação afetada por incêndios florestais 
+Este repositório contém os artefactos que fazem parte da biblioteca **recveg** desenvolvida no âmbito da dissertação de mestrado intitulada "Modelo preditivo de recuperação da vegetação afetada por incêndios florestais", do Mestrado em Engenharia Informática de de Computadores do Instituto Superior de Engenharia de Lisboa.
 Este código é publicado sob a licença Creative Commons CC BY-NC:
 >Esta licença permite que outros remisturem, adaptem e criem a partir do seu trabalho para fins não comerciais, e embora os novos trabalhos tenham de lhe atribuir o devido crédito e não possam ser usados para fins comerciais, eles não têm de licenciar esses trabalhos derivados ao abrigo dos mesmos termos.
 
-# recveg.cobertura
-
-Cobertura - Corine Land Cover
-
+# Classes
 ## Cobertura
 ```python
 Cobertura (Estático)
 ```
-
 Classe que encapsula a funcionalidade de caracterização da cobertura da
 superfície terrestre tendo em conta a utilização do Corinne Land Cover
 (CLC) publicado pela plataforma Copernicus
@@ -40,13 +36,6 @@ Lista das categorias CLC para tipos de vegetação
 ```python
 Cobertura.gera(regiao, categorias=None)
 ```
-
-Gera uma representação da imagem correspondente ao Corine Land
-Cover  de 2012 para a região indicada
-
-# recveg.composito
-
-Compósito MVC de NDVI
 
 ## Composito
 ```python
@@ -114,15 +103,11 @@ Composito.avalia(self)
 ```
 Avalia o compósito de MVC
 
-# recveg.evento
-
-Caracterização de uma zona ardida na base de dados do ICNF
-
 ## Evento
 ```python
 Evento(self, dados)
 ```
-Encapsula a informação de um evento
+Encapsula a informação de um evento de incêndio na base de dados do ICNF
 ### concelho
 Concelho onde pertence a Freguesia
 ### data_fim
@@ -142,9 +127,6 @@ Nome do local onde ocorreu o fogo
 Evento.campos()
 ```
 Devolve a lista dos nomes dos campos correspondentes ao evento
-# recveg.gee
-
-Constantes GEE e das suas fontes de dados
 
 ## GEE
 ```python
@@ -197,9 +179,6 @@ Nome da coleção de dados recolhidos pela missão Sentinel 2 no repositório do
 Nome do campo das propriedades de uma imagem Sentinel 2 no repositório do GEE que regista a cobertura de nuvens
 ### UNIDADES_METROS
 Nome da unidade metro
-# recveg.geometria
-
-Geometria
 
 ## Geometria
 ```python
@@ -223,9 +202,6 @@ Geometria total (alvo e referência)
 Geometria.extrai(self)
 ```
 Extrai informação do evento
-# recveg.modelo
-
-Modelo de extração, agregação e armazenamento de dados
 
 ## ModeloNotificacao
 ```python
@@ -333,9 +309,6 @@ Guarda o modelo num ficheiro
 Modelo.carrega(self, nome)
 ```
 Carrega os dados de modelo a partir de um ficheiro
-# recveg.modelocobertura
-
-Modelo de cobertura
 
 ## ModeloCobertura
 ```python
@@ -375,9 +348,6 @@ Classe que encapsula a funcionalidade de um tipo de cobertura
 Dimensão, em pontos, da imagem
 ### imagem
 Imagem da cobertura
-# recveg.sentinel
-
-Dados multi-espectrais da missão Sentinel 2
 
 ## Sentinel
 ```python
@@ -406,13 +376,10 @@ das zonas afetadas por nuvens
 Sentinel.mapa_validacao(nome)
 ```
 Map que adiciona uma banda com o sufixo _B que representa os pixeis válidos
-# recveg.utilidades
-
-Classe com métodos de utlidades
 
 ## Utilidades
 ```python
-Utilidades(self, /, *args, **kwargs)
+Utilidades (Estático)
 ```
 Classe que encapsula um conjunto de métodos utilitários
 ### DIA
@@ -432,7 +399,7 @@ Dia seguinte à data indicada como um timestamp de unix em milisegundos
 ```python
 Utilidades.dia_apos(data, dias)
 ```
-Dia correspondete à data indicada acrescida de um dado número de dias
+Dia correspondente à data indicada acrescida de um dado número de dias
 ### apenas_data
 ```python
 Utilidades.apenas_data(data)
@@ -442,15 +409,12 @@ Eliminar do timestamp de unix em milisegundos a hora do dia
 ```python
 Utilidades.formata_data(data, formato='%d-%m-%Y')
 ```
-Formata umtimestamp unix em milisegundos
+Formata um timestamp unix em milisegundos
 ### formata_data_hora
 ```python
 Utilidades.formata_data_hora(data)
 ```
-Formata umtimestamp unix em milisegundos
-# recveg.zonasardidas
-
-Encapsula a base de dados de zonas ardidas da base de dados do ICNF
+Formata um timestamp unix em milisegundos
 
 ## ZonasArdidas
 ```python
