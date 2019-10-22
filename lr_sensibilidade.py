@@ -41,11 +41,11 @@ def executa_calculo(nome_ficheiro):
 
     plt.figure(1, figsize=(16, 10))
     plt.style.use("seaborn-darkgrid")
-    plt.title(u"Área ardida", fontsize=FONTE_NORMAL, pad=ESPACO)
-    plt.xlabel(u"Dias após o incêndio (t)", fontsize=FONTE_NORMAL)
+    #plt.title(u"Área ardida", fontsize=FONTE_NORMAL, pad=ESPACO)
+    plt.xlabel(u"Dias após o primeira imagem válida (t)", fontsize=FONTE_NORMAL)
     plt.ylabel("NDVI", fontsize=FONTE_NORMAL)
-    plt.xticks(fontsize=FONTE_NORMAL)
-    plt.yticks(fontsize=FONTE_NORMAL)
+    plt.xticks(fontsize=FONTE_PEQUENA)
+    plt.yticks(fontsize=FONTE_PEQUENA)
     plt.scatter(tempo, dados[:, Composito.NDVI_MEDIA_FLORESTA_ALVO], c="white",\
         edgecolor="red", s=92, lw=2, alpha=0.8, label=u"Floresta")
     plt.scatter(tempo, dados[:, Composito.NDVI_MEDIA_MATO_ALVO], c="white", \
@@ -58,11 +58,11 @@ def executa_calculo(nome_ficheiro):
 
     plt.figure(2, figsize=(16, 10))
     plt.style.use("seaborn-darkgrid")
-    plt.title(u"Área de referência", fontsize=FONTE_NORMAL, pad=ESPACO)
-    plt.xlabel(u"Dias após o incêndio (t)", fontsize=FONTE_NORMAL)
+    #plt.title(u"Área de referência", fontsize=FONTE_NORMAL, pad=ESPACO)
+    plt.xlabel(u"Dias após o primeira imagem válida (t)", fontsize=FONTE_NORMAL)
     plt.ylabel("$NDVI^*$", fontsize=FONTE_NORMAL)
-    plt.xticks(fontsize=FONTE_NORMAL)
-    plt.yticks(fontsize=FONTE_NORMAL)
+    plt.xticks(fontsize=FONTE_PEQUENA)
+    plt.yticks(fontsize=FONTE_PEQUENA)
     plt.scatter(tempo, dados[:, Composito.NDVI_MEDIA_FLORESTA_REFERENCIA],\
         c="white", edgecolor="red", s=92, lw=2, alpha=0.8, label=u"Floresta")
     plt.scatter(tempo, dados[:, Composito.NDVI_MEDIA_MATO_REFERENCIA],\

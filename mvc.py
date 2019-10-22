@@ -79,4 +79,4 @@ def histograma():
         print(FORMATO_DEC % (distrito, lista[distrito]))
         
 histograma()
-avalia_local(PEDROGAO, "pedrogao-6.ndvi", recupera=True)
+avalia_local(PEDROGAO, "dados/pedrogao-atual.ndvi", recupera=True)

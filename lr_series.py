@@ -25,7 +25,7 @@ def executa_calculo(nome_ficheiro):
     produz o gráfico
     """
     ficheiro = open(nome_ficheiro, "rb")
-    modelo = pickle.load(ficheiro, encoding='latin1')
+    modelo = pickle.load(ficheiro, encoding="latin1")
     dados = modelo["tabela"]
 
     # O tempo é relativo à primeira imagem válida

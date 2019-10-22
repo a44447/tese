@@ -30,7 +30,7 @@ def executa_calculo(nome_ficheiro):
     """
     # Recupera os dados recolhidos no GEE, séries temporais de NDVI
     ficheiro = open(nome_ficheiro, "rb")
-    modelo = pickle.load(ficheiro, encoding='latin1')
+    modelo = pickle.load(ficheiro, encoding="latin1")
     dados = modelo["tabela"]
 
     # =================
@@ -75,7 +75,7 @@ def executa_calculo(nome_ficheiro):
     eixo_percentagem.set_ylabel(u"Diferença", fontsize=FONTE_NORMAL, labelpad=ESPACO_LEGENDA)
     eixo_diferenca.tick_params(axis="x", labelsize=FONTE_PEQUENA)
     eixo_diferenca.tick_params(axis="y", labelsize=FONTE_PEQUENA)
-    eixo_diferenca.tick_params(axis="y", labelsize=FONTE_PEQUENA)
+    eixo_percentagem.tick_params(axis="y", labelsize=FONTE_PEQUENA)
 
     plt.scatter(tempo, diferenca, c="green", s=imagens * diametro, alpha=0.5, label=u"${y(t)}$")
     #  Ajusta a escala da percentagem
@@ -86,4 +86,4 @@ def executa_calculo(nome_ficheiro):
     plt.show()
 
 # Atualizar com o nome do ficheiro que se pretende utilizar
-executa_calculo("dados/pedrogao.ndvi")
+executa_calculo("dados/pedrogao-atual.ndvi")
