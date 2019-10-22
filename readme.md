@@ -36,6 +36,7 @@ Lista das categorias CLC para tipos de vegetação
 ```python
 Cobertura.gera(regiao, categorias=None)
 ```
+Gera a representação de um objecto GEE dos dados de cobertura de superfície para a regiao indicada
 
 ## Composito
 ```python
