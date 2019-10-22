@@ -43,5 +43,5 @@ def executa_calculo(nome_ficheiro):
     serie_alvo.relatorio()
     serie_alvo.grafico(titulo=None, cor_referencia="red", cor_alvo="blue")
 
-# Atualizar com o nome do ficheiro que se pretende usar
+# Atualizar com o nome do ficheiro que se pretende utilizar
 executa_calculo("dados/pedrogao.ndvi")

@@ -41,7 +41,7 @@ def executa_calculo(nome_ficheiro):
 
     plt.figure(1, figsize=(16, 10))
     plt.style.use("seaborn-darkgrid")
-    plt.xlabel(u"Dias após o incêndio (t)", fontsize=FONTE_NORMAL)
+    plt.xlabel(u"Dias após a primeira imagem (t)", fontsize=FONTE_NORMAL)
     plt.ylabel(u"$\\frac{NDVI(t)-NDVI^*(t)}{a}$", fontsize=FONTE_NORMAL)
     plt.xticks(fontsize=FONTE_PEQUENA)
     plt.yticks(fontsize=FONTE_PEQUENA)
@@ -54,5 +54,5 @@ def executa_calculo(nome_ficheiro):
                 label=u"Vegetação")
     plt.show()
 
-# Atualizar com o nome do ficheiro que se pretende usar
+# Atualizar com o nome do ficheiro que se pretende utilizar
 executa_calculo("dados/pedrogao.ndvi")

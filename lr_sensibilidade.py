@@ -73,5 +73,5 @@ def executa_calculo(nome_ficheiro):
     plt.show()
     serie_referencia.relatorio()
 
-# Atualizar com o nome do ficheiro que se pretende usar
+# Atualizar com o nome do ficheiro que se pretende utilizar
 executa_calculo("dados/pedrogao.ndvi")
